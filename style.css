@@ -1,0 +1,72 @@
+.background
+{
+    background: url(img/start_background.jpg);
+}
+.authorization
+{
+    width: 33%;
+    height: auto;
+    position: absolute;
+    top: 13%;
+    left: 34%;
+    background-color: rgba(129, 18, 92, 0.48);
+    border-radius: 15% 15%;
+    padding-bottom: 3%;
+
+}
+.white
+{
+    color: white!important;
+}
+.h1-2
+{
+    position: absolute;
+
+}
+.h2-1
+{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.sp-1
+{
+    color: #FFFFFF;
+}
+.sp-2
+{
+    color:  #FFFFFF;
+}
+.h1-1
+{
+    margin-top: 4%;
+    text-align: center;
+    font-family: "Comic Sans MS";
+    color:  #FFFFFF;
+
+}
+.in-1
+{
+    margin-top: 5%;
+    width: 60%!important;
+    margin-left: 20%!important;
+
+}
+.btn-1
+{
+    margin-top: 8%;
+    width: 40%;
+    color: #ffffff; !important;
+    border: 2px solid #c462ae !important;
+
+}
+.btn-1:hover
+{
+    background-color: #c485b4!important;
+    border: 2px solid #c462ae !important;
+}
+.al-1
+{
+    margin-top: 5%;
+    display: none;
+}

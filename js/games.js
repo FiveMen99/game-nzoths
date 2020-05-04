@@ -34,6 +34,7 @@ function draw(){
     ctx.clearRect(0, 0, ctx.width, ctx.height);
     ctx.drawImage(backgroundImage,0,0);
     ctx.drawImage(player,x,y);
+
     ctx.drawImage (floor,xn,yn);
     if (y < 500 - player.height) y++;
     xn=xn-5;

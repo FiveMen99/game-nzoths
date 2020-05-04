@@ -5,6 +5,10 @@ cvs.height = window.innerHeight-20;
 var player = new Image();
 var notplayer = new Image();
 var phone = new Image();
+var nzoth = new Image();
+nzoth.src="img/Нзот.png";
+var nzoth1 = new Image();
+nzoth1.src="img/Нзот1.png";
 
 var x = 40;
 var y = 0;
@@ -57,11 +61,29 @@ function move(e) {
  y=y-10;
 }
 document.addEventListener("keydown", move);
+var a=0;
 function draw(){
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(phone,0,0);
     ctx.drawImage(player,x,y);
     ctx.drawImage(notplayer,xn,yn);
+    if(a>=0 && a<50)
+    {
+        ctx.drawImage(nzoth,1020,-150);
+        a++;
+        console.log(a);
+        ;
+    }
+    if(a>=50 && a<=100)
+    {
+        ctx.drawImage(nzoth1,1020,-150);
+        a++;
+        console.log(a);
+    }
+    if(a==100)
+    {
+        a=0;
+    }
     y=y+1;
     xn=xn-10;
     if(xn<-50)

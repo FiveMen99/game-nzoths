@@ -1,0 +1,14 @@
+.background
+{
+    background: url(img/start_background.jpg);
+}
+.authorization
+{
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    top: 13%;
+    left: 35%;
+    background-color: rgba(129, 18, 92, 0.48);
+    border-radius: 15% 15%;
+}

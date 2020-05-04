@@ -2,7 +2,7 @@
 var start_game = 1; //Переменная отвечающая за начало игры
 
 if(start_game==1)
-$("canvas").css('display', 'block');
+$("#canvas").css('display', 'block');
 
 
 var cvs = document.getElementById("canvas");
@@ -33,21 +33,9 @@ addEventListener("keydown", function(event) {
         console.log("123");
 });
 
-
-
-
-
-
-
-
-
-
-
-
 function move(e) {
     console.log(e.keyCode);
     switch(e.keyCode){
-
         case 87:  // если нажата клавиша влево
             console.log("влево");
             break;

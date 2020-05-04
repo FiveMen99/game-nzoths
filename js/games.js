@@ -1,3 +1,10 @@
+
+var start_game = 1; //Переменная отвечающая за начало игры
+
+if(start_game==1)
+$("canvas").css('display', 'block');
+
+
 var cvs = document.getElementById("canvas");
 var ctx = cvs.getContext("2d");
 cvs.width=window.innerWidth-20;

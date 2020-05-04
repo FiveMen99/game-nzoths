@@ -1,80 +1,60 @@
+//Задание начального окна игры
 var cvs = document.getElementById("canvas");
+cvs.width= window.outerWidth;
+cvs.height = window.outerHeight - 2;
+cvs.onkeydown = move;
+
+
 var ctx = cvs.getContext("2d");
-cvs.width=window.innerWidth-20;
-cvs.height = window.innerHeight-20;
+var windowWidth = window.outerWidth;
+var windowHeight = window.outerHeight;
+
+//Установка картинок и начальных координат для игрока
 var player = new Image();
-var notplayer = new Image();
-var phone = new Image();
+player.src ="img/Sovukh.png";
+
+var floor = new Image();
+floor.src ="img/floor1.png";
+
+
+var backgroundImage = new Image();
+backgroundImage.src = "img/7.jpg";
 
 var x = 40;
 var y = 0;
-var xn = 300;
-var yn = 300;
-cvs.onkeydown = move;
-phone.src = "img/7.jpg";
-player.src ="img/lol.png";
-notplayer.src ="img/Копье.png";
-phone.width = 450;
-phone.height =4000;
+var xn = 1000;
+var yn = 500;
 
-addEventListener("keydown", function(event) {
-    if (event.keyCode == 37)
-        console.log("123");
-});
+//Когда картинка игрока загрузилась, игра начинается
+player.onload = draw();
+console.log("this is player height"+ player.height);
 
-
-
-
-
-
-
-
-
-
-
-
-function move(e) {
-    console.log(e.keyCode);
-    switch(e.keyCode){
-
-        case 87:  // если нажата клавиша влево
-            console.log("влево");
-            break;
-        case 38:   // если нажата клавиша вверх
-                console.log("вверх");
-            break;
-        case 39:   // если нажата клавиша вправо
-            console.log("вправо");
-            break;
-        case 40:   // если нажата клавиша вниз
-            console.log("вниз");
-            break;
-        case "KeyA":
-                console.log("pressA");
-            break;
-
-    }
- y=y-10;
-}
-document.addEventListener("keydown", move);
 function draw(){
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(phone,0,0);
+    console.log()
+    ctx.clearRect(0, 0, ctx.width, ctx.height);
+    ctx.drawImage(backgroundImage,0,0);
     ctx.drawImage(player,x,y);
-    ctx.drawImage(notplayer,xn,yn);
-    y=y+1;
-    xn=xn-10;
-    if(xn<-50)
+    ctx.drawImage (floor,xn,yn);
+    if (y < 500 - player.height) y++;
+    xn=xn-5;
+    if(xn<-50) //условие проверки конца блока
     {
         xn=1000;
     }
-    if(y>=yn && y<=yn+200 && x>=xn+60 && x<=xn+200 )
-    {
-        console.log("popal" + "vx игрока равен =" + x + "vy игрока равен =" + y + " x предмета равен =" + xn + " y премета равен" + yn)
-    }
-    else
-    {
+ //   if(y>=yn && y<=yn+200 && x>=xn+60 && x<=xn+200 ) //условие проверки проигрыша игрока
+    //   {
+   // console.log("popal" + "vx игрока равен =" + x + "vy игрока равен =" + y + " x предмета равен =" + xn + " y премета равен" + yn)
+   // }
+   // else  //отрисовка блоков
+   // {
         requestAnimationFrame(draw);
-    }
+    //}
 }
-player.onload =draw();
+
+
+function move(e) {
+ y=y-10;
+ console.log(e.keyCode);
+}
+document.addEventListener("keydown", move);
+

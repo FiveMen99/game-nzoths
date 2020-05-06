@@ -1,3 +1,10 @@
+body
+{
+    margin: 0;
+}
+
+
+
 .background
 {
     background: url(img/start_background.jpg);

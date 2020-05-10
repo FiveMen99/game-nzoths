@@ -9,8 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $row=$result->fetch(PDO::FETCH_ASSOC);
     if(!empty($row))
     {
-        //if(password_verify($password,$row['password']))
-        if($password==$row['password'])
+        if(password_verify($password,$row['password']))
         {
             echo "ok";
             session_start();

@@ -2,8 +2,12 @@ body
 {
     margin: 0;
 }
-
-
+.kn
+{
+    position: absolute;
+    top: 65%;
+    left: 40%;
+}
 
 .background
 {
@@ -15,6 +19,18 @@ body
     height: auto;
     position: absolute;
     top: 13%;
+    left: 34%;
+    background-color: rgba(129, 18, 92, 0.48);
+    border-radius: 15% 15%;
+    padding-bottom: 3%;
+
+}
+.registration
+{
+    width: 33%;
+    height: auto;
+    position: absolute;
+    top: 8%;
     left: 34%;
     background-color: rgba(129, 18, 92, 0.48);
     border-radius: 15% 15%;

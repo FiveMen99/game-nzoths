@@ -41,7 +41,18 @@ addEventListener("keydown", function(event) {
 
 
 
+<<<<<<< Updated upstream
 
+=======
+var pylon = new Image();
+pylon.src ="img/pylon.png";
+
+var x = 40;
+var y = 0;
+var xn = 100* dx;
+var yn = cvs.height-60;
+var pylonYpos=59;
+>>>>>>> Stashed changes
 
 
 function move(e) {
@@ -70,6 +81,7 @@ function move(e) {
 document.addEventListener("keydown", move);
 var a=0;
 function draw(){
+<<<<<<< Updated upstream
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(phone,0,0);
     ctx.drawImage(player,x,y);
@@ -77,10 +89,31 @@ function draw(){
     if(a>=0 && a<50)
     {
         ctx.drawImage(nzoth,1020,-150);
+=======
+    ctx.clearRect(0, 0, cvs.width, cvs.height);
+    ctx.drawImage(backgroundImage,0,0, 100*dx, 100*dy); //Отрисовка фона
+
+    ctx.drawImage (floor, xn - 100 * dx, 90*dy, 100*dx, 10*dy); //Отрисовка пола
+    ctx.drawImage (floor, xn, 90*dy,100*dx, 10*dy);
+
+    ctx.drawImage(pylon, xn, pylonYpos*dy);
+
+    if(a === 0) //условие реализущее спрайт полета/ходьбы
+        ctx.drawImage(player,x,y);
+    else if (a === 40) a=0;
+    else {
+        if(a<20)
+        {
+            ctx.drawImage(player1,x,y);
+        }
+        else
+            ctx.drawImage(player,x,y);
+>>>>>>> Stashed changes
         a++;
         console.log(a);
         ;
     }
+<<<<<<< Updated upstream
     if(a>=50 && a<=100)
     {
         ctx.drawImage(nzoth1,1020,-150);
@@ -105,5 +138,35 @@ function draw(){
     {
         requestAnimationFrame(draw);
     }
+=======
+
+    //ctx.drawImage (nzoths,cvs.width-400,cvs.height-700);
+
+
+    if ((y < cvs.height - 90 - player.height) && (a==0)) y+=2;
+    xn-=5;
+    if(xn <= 0) //условие проверки конца блока
+    {
+        xn = 100*dx;
+        pylonYpos=randomInteger(1,59);
+    }
+    requestAnimationFrame(draw);
+}
+
+function randomInteger(min, max) {
+    // получить случайное число от (min-0.5) до (max+0.5)
+    let rand = min - 0.5 + Math.random() * (max - min + 1);
+    return Math.round(rand);
+}
+
+function move(e)
+{
+    if (y>0) {
+        y = y - 10;
+        a = 1;
+    }
+    console.log("Это xn" + xn);
+    console.log("Gh");
+>>>>>>> Stashed changes
 }
 player.onload =draw();
